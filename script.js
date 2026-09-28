@@ -1,0 +1,7 @@
+function irMenu(){document.getElementById("menu").scrollIntoView({behavior:"smooth"})}
+function irReservas(){document.getElementById("reservas").scrollIntoView({behavior:"smooth"})}
+function filtrarMenu(categoria){document.querySelectorAll(".producto").forEach(function(producto){producto.style.display=(categoria==="todos"||producto.classList.contains(categoria))?"block":"none"})}
+function pedirProducto(nombre,precio){const telefono="59100000000";const mensaje="Hola, quiero pedir: "+nombre+" - Bs "+precio;window.open("https://wa.me/"+telefono+"?text="+encodeURIComponent(mensaje),"_blank")}
+function abrirWhatsApp(){const telefono="59100000000";const mensaje="Hola, quiero realizar un pedido.";window.open("https://wa.me/"+telefono+"?text="+encodeURIComponent(mensaje),"_blank")}
+const formulario=document.getElementById("formularioReserva");
+formulario.addEventListener("submit",function(event){event.preventDefault();const nombre=document.getElementById("nombre").value;const fecha=document.getElementById("fecha").value;const hora=document.getElementById("hora").value;const personas=document.getElementById("personas").value;document.getElementById("mensajeReserva").innerHTML="✅ Reserva realizada para <strong>"+nombre+"</strong>, el día "+fecha+" a las "+hora+" para "+personas+" persona(s).";formulario.reset()});
